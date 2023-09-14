@@ -4,7 +4,7 @@ body {
   height: 100vh;
   max-width: 1440px;
   margin: auto;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -118,7 +118,7 @@ main {
   margin: 1em 0em;
   &--thumb {
     display: flex;
-    background-color: #ff6060;
+    background: linear-gradient(rgba(255, 96, 96, 1), rgba(121, 44, 44, 1));
     margin: 1em;
     width: 340px;
     height: 340px;
@@ -130,6 +130,7 @@ main {
       font-size: 1em;
       margin: 1em;
       color: white;
+      width: 50%;
     }
     &__cover {
       object-fit: cover;
@@ -148,3 +149,82 @@ main {
     }
   }
 }
+
+.accommodation {
+  margin: 0 0 2em 0;
+  &--gallery {
+    display: flex;
+    justify-content: center;
+    margin: 4em 0;
+    img {
+      object-fit: cover;
+      border-radius: 1em;
+      width: 1240px;
+      height: 20em;
+    }
+  }
+  &--info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    color: #ff6060;
+    &__title {
+      h1 {
+        font-size: 2em;
+        padding: 0;
+        margin: 0 0 0.3em 0;
+      }
+      h3 {
+        font-size: 1.5em;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    &__author {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: min-content;
+      h3 {
+        font-size: 1.5em;
+        padding: 0;
+        margin: 0 0.3em 0 0;
+      }
+      img {
+        border-radius: 50%;
+        width: 4em;
+        height: 4em;
+      }
+    }
+    &__tags {
+      ul {
+        list-style-type: none;
+        margin: 1em 0 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        li {
+          background-color: #ff6060;
+          color: white;
+          border-radius: 1em;
+          text-align: center;
+          padding: 0.3em 1.5em;
+          margin: 0 1em 0 0;
+          font-size: 0.8em;
+        }
+      }
+    }
+    &__rate {
+    }
+  }
+}
+
+/* @media screen and (max-width: 1440px) {
+  .card {
+    &--thumb {
+      width: 355px;
+      height: 255px;
+    }
+  }
+} */

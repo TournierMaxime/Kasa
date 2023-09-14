@@ -24,9 +24,15 @@ const Card = () => {
     <div className="card">
       {data.map((item, index) => {
         return (
-            <div className="card--thumb" key={index}>
-            {/* <img className="card--thumb__cover" src={item.cover} alt={item.title} /> */}
-            <h3 className="card--thumb__title">{item.title}</h3>
+          <div className="card--thumb" key={index}>
+            <a href={`/accommodation/${item.id}`}>
+              <img
+                className="card--thumb__cover"
+                src={item.cover}
+                alt={item.title}
+              />
+              <h3 className="card--thumb__title">{item.title}</h3>
+            </a>
           </div>
         )
       })}
