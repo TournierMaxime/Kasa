@@ -41,7 +41,10 @@ const Accommodation = () => {
               <Rate rate={foundAccommodation.rating} />
             </div>
           </div>
-          {/* <Collapse /> */}
+          <div className="accommodation--collapse"> 
+            <Collapse title={'Description'} description={foundAccommodation.description} />
+            <Collapse title={'Equipements'} equipments={foundAccommodation.equipments} />
+          </div>
         </div>
       )
     }

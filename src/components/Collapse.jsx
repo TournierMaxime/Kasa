@@ -1,7 +1,41 @@
-import React from 'react'
+import React, { Fragment, useState } from "react"
+import arrowBack from "../assets/icons/arrow_back.png"
+import arrowFront from "../assets/icons/arrow_front.png"
 
-export default function Collapse() {
+const Collapse = ({ title, description, equipments }) => {
+  const [isActive, setIsActive] = useState(false)
+
   return (
-    <div>Collapse</div>
+    <Fragment>
+      <div
+        className={`accommodation--collapse__action ${
+          isActive ? "active" : ""
+        }`}
+        onClick={() => setIsActive(!isActive)}
+      >
+        <h3>{title}</h3>
+        {isActive ? (
+          <img src={arrowBack} alt="arrow_back" />
+        ) : (
+          <img src={arrowFront} alt="arrow_front" />
+        )}
+        
+        <div className="content">
+          {description && isActive ? (
+            <p>{description}</p>
+          ) : null}
+          {equipments && isActive ? (
+            <ul>
+              {equipments.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </div>
+    </Fragment>
   )
 }
+
+
+export default Collapse
