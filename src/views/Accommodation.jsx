@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Fragment } from "react"
 import Gallery from "../components/Gallery"
 import Collapse from "../components/Collapse"
 import Rate from "../components/Rate"
+import Title from "../components/Title"
 
 const Accommodation = () => {
   const { id } = useParams()
@@ -41,9 +42,15 @@ const Accommodation = () => {
               <Rate rate={foundAccommodation.rating} />
             </div>
           </div>
-          <div className="accommodation--collapse"> 
-            <Collapse title={'Description'} description={foundAccommodation.description} />
-            <Collapse title={'Equipements'} equipments={foundAccommodation.equipments} />
+          <div className="accommodation--collapse">
+            <Collapse
+              title={"Description"}
+              description={foundAccommodation.description}
+            />
+            <Collapse
+              title={"Equipements"}
+              equipments={foundAccommodation.equipments}
+            />
           </div>
         </div>
       )
@@ -67,7 +74,12 @@ const Accommodation = () => {
     fetchData()
   }, [])
 
-  return <main>{accommodation()}</main>
+  return (
+    <Fragment>
+      <Title title={foundAccommodation?.title} />
+      <main>{accommodation()}</main>
+    </Fragment>
+  )
 }
 
 export default Accommodation

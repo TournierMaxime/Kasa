@@ -96,7 +96,7 @@ main {
   background-size: cover;
   background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../assets//images/background-image.png");
+    url("../assets/images/background-image.png");
   h1 {
     color: white;
     align-items: center;
@@ -104,6 +104,22 @@ main {
     font-size: 2em;
     margin: 1em;
   }
+}
+
+.backgroundImageAbout {
+  margin: 1em;
+  width: 90%;
+  max-width: 1240px;
+  height: 10em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/images/background-image-about.png");
 }
 
 .card {
@@ -245,8 +261,6 @@ main {
         }
       }
     }
-    &__rate {
-    }
   }
   &--collapse {
     display: flex;
@@ -254,6 +268,74 @@ main {
     flex-direction: row;
     align-items: flex-start;
     &__action {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ff6060;
+      color: white;
+      border-radius: 0.3em;
+      padding: 0.2em;
+      width: 98%;
+      margin: 1em 0;
+      h3 {
+        font-size: 1em;
+        padding: 0 1em;
+      }
+      img {
+        width: 1em;
+        height: 1em;
+        padding: 0 1em;
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      background-color: #f6f6f6;
+      position: relative;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      border-radius: 0.3em;
+      top: -1em;
+      p {
+        color: #ff6060;
+        padding: 0.3em 1em;
+        line-height: 25px;
+        margin: 0.5em 0;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0.5em 0;
+        padding: 0;
+        width: 100%;
+        li {
+          padding: 0.3em 1em;
+          color: #ff6060;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.accommodation--collapse__action.active + .accommodation--collapse__content {
+  max-height: 1000px;
+}
+
+.about {
+  margin: 0 0 2em 0;
+  width: 86%;
+  &--collapse {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    &__action {
+      overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
@@ -273,43 +355,43 @@ main {
         height: 1em;
         padding: 0 1em;
       }
-      .content {
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      background-color: #f6f6f6;
+      position: relative;
+      width: 45%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      border-radius: 0.3em;
+      top: -1em;
+      p {
+        color: #ff6060;
+        padding: 0.3em 1em;
+        line-height: 25px;
+        margin: 0.5em 0;
+      }
+      ul {
+        list-style-type: none;
         display: flex;
         flex-direction: column;
-        background-color: #f6f6f6;
-        position: absolute;
-        top: 3.6em;
-        width: -webkit-fill-available;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        border-radius: 0.3em;
-        p {
-          color: #ff6060;
+        margin: 0.5em 0;
+        padding: 0;
+        width: 100%;
+        li {
           padding: 0.3em 1em;
-          line-height: 25px;
-          margin: 0.5em 0;
-        }
-        ul {
-          list-style-type: none;
-          display: flex;
-          flex-direction: column;
-          margin: 0.5em 0;
-          padding: 0;
+          color: #ff6060;
           width: 100%;
-          li {
-            padding: 0.3em 1em;
-            color: #ff6060;
-            width: 100%;
-          }
         }
       }
     }
   }
 }
 
-.accommodation--collapse__action.active .content {
-  max-height: 400px;
+.about--collapse__action.active + .about--collapse__content {
+  max-height: 1000px;
 }
 
 @media screen and (max-width: 425px) {
