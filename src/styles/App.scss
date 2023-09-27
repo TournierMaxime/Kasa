@@ -66,7 +66,7 @@ main {
 .footer {
   background-color: black;
   color: white;
-  margin: 10em 0;
+  margin: 1em 0;
   width: auto;
   height: 209px;
   display: flex;
@@ -200,6 +200,7 @@ main {
       height: 8em;
       left: 0;
       top: 7em;
+      cursor: pointer;
     }
     &__arrowRight {
       position: absolute;
@@ -207,6 +208,7 @@ main {
       height: 8em;
       right: 0;
       top: 7em;
+      cursor: pointer;
     }
   }
   &--info {
@@ -286,6 +288,7 @@ main {
         width: 1em;
         height: 1em;
         padding: 0 1em;
+        cursor: pointer;
       }
     }
     &__content {
@@ -293,7 +296,7 @@ main {
       flex-direction: column;
       background-color: #f6f6f6;
       position: relative;
-      width: 100%;
+      width: 99%;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-in-out;
@@ -320,6 +323,10 @@ main {
       }
     }
   }
+}
+
+.accommodation--elements {
+  width: 45%;
 }
 
 .accommodation--collapse__action.active + .accommodation--collapse__content {
@@ -354,6 +361,7 @@ main {
         width: 1em;
         height: 1em;
         padding: 0 1em;
+        cursor: pointer;
       }
     }
     &__content {

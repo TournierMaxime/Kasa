@@ -22,17 +22,10 @@ const Collapse = ({ title, description, equipments, isAbout }) => {
           </div>
           <div className="about--collapse__content">
             {description && isActive ? <p>{description}</p> : null}
-            {equipments && isActive ? (
-              <ul>
-                {equipments.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
           </div>
         </Fragment>
       ) : (
-        <div style={{width: '45%'}}>
+        <div className="accommodation--elements">
           <div
             className={`accommodation--collapse__action ${
               isActive ? "active" : ""
