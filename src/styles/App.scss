@@ -351,7 +351,7 @@ main {
       color: white;
       border-radius: 0.3em;
       padding: 0.2em;
-      width: 45%;
+      width: 70%;
       margin: 1em 0;
       h3 {
         font-size: 1em;
@@ -369,7 +369,7 @@ main {
       flex-direction: column;
       background-color: #f6f6f6;
       position: relative;
-      width: 45%;
+      width: 70%;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-in-out;
@@ -402,14 +402,15 @@ main {
   max-height: 1000px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .header {
     &--content {
       &__img {
-        width: 100%;
+        width: 100px;
       }
       &__link {
         ul {
+          align-items: center;
           li {
             a {
               width: 25%;
@@ -418,6 +419,16 @@ main {
             }
           }
         }
+      }
+    }
+  }
+  .about {
+    &--collapse {
+      &__action {
+        width: 90%;
+      }
+      &__content {
+        width: 90%;
       }
     }
   }
