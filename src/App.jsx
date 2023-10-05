@@ -20,7 +20,7 @@ const App = () => {
             element={<Accommodation />}
           />
           <Route path="/about" element={<About />} />
-          <Route path="/404" element={<Error404 />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </Router>

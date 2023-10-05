@@ -4,6 +4,7 @@ import Gallery from "../components/Gallery"
 import Collapse from "../components/Collapse"
 import Rate from "../components/Rate"
 import Title from "../components/Title"
+import Error404 from "../components/Error404"
 
 const Accommodation = () => {
   const { id } = useParams()
@@ -73,6 +74,8 @@ const Accommodation = () => {
 
     fetchData()
   }, [])
+
+    if (!foundAccommodation) return <Error404 />
 
   return (
     <Fragment>
