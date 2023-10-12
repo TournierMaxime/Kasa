@@ -13,7 +13,7 @@ const Rate = ({ rate }) => {
     }
   }
 
-  return <div>{stars}</div>;
+  return <div className="stars">{stars}</div>;
 };
 
 export default Rate;

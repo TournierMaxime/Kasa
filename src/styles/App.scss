@@ -21,7 +21,7 @@ main {
   justify-content: space-between;
   align-items: center;
   justify-content: center;
-  margin: 1em;
+  margin: 1em 0;
 
   &--content {
     display: flex;
@@ -177,7 +177,7 @@ main {
       object-fit: cover;
       border-radius: 1em;
       max-width: 1240px;
-      width: 100vw;
+      width: 100%;
       height: 20em;
     }
     &__pagination {
@@ -219,24 +219,6 @@ main {
         padding: 0;
         margin: 0;
       }
-    }
-    &__author {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      width: min-content;
-      h3 {
-        font-size: 1.5em;
-        padding: 0;
-        margin: 0 0.3em 0 0;
-      }
-      img {
-        border-radius: 50%;
-        width: 4em;
-        height: 4em;
-      }
-    }
-    &__tags {
       ul {
         list-style-type: none;
         margin: 1em 0 0 0;
@@ -251,6 +233,36 @@ main {
           padding: 0.3em 1.5em;
           margin: 0 1em 0 0;
           font-size: 0.8em;
+        }
+      }
+    }
+    &__author {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: min-content;
+      h3 {
+        font-size: 1.5em;
+        padding: 0;
+        margin: 0 0.3em 0 0;
+      }
+      img {
+        border-radius: 50%;
+        width: 4em;
+        height: 4em;
+      }
+      .author {
+        display: flex;
+        align-items: flex-start;
+        width: min-content;
+        margin-top: 1em;
+      }
+      .stars {
+        display: flex;
+        margin-top: 0.2em;
+        img {
+          width: 2em;
+          height: 2em;
         }
       }
     }
@@ -465,6 +477,35 @@ main {
       margin-bottom: 4em;
     }
   }
+  .accommodation {
+    width: 90%;
+    &--gallery {
+      margin: 0 0 2em 0;
+      &__arrowLeft {
+        width: 2em;
+        height: 2em;
+        top: 10em;
+      }
+      &__arrowRight {
+        width: 2em;
+        height: 2em;
+        top: 10em;
+      }
+    }
+    &--info {
+      display: flex;
+      flex-direction: column;
+      &__author {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+      }
+    }
+    &--elements {
+      width: 47%;
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -482,12 +523,34 @@ main {
     }
   }
 
-    .header {
+  .header {
     &--content {
       &__link {
         ul {
           li {
             margin: 0 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .accommodation {
+    &--collapse {
+      &__action {
+        h3 {
+          padding: 0;
+        }
+        img {
+          padding: 0;
+        }
+      }
+      &__content {
+        ul {
+          li {
+            width: auto;
           }
         }
       }

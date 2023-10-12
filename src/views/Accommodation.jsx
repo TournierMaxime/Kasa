@@ -22,24 +22,20 @@ const Accommodation = () => {
             <div className="accommodation--info__title">
               <h1>{foundAccommodation.title}</h1>
               <h3>{foundAccommodation.location}</h3>
-            </div>
-            <div className="accommodation--info__author">
-              <h3>{foundAccommodation.host.name}</h3>
-              <img
-                src={foundAccommodation.host.picture}
-                alt={foundAccommodation.host.name}
-              />
-            </div>
-          </div>
-          <div className="accommodation--info">
-            <div className="accommodation--info__tags">
               <ul>
                 {foundAccommodation.tags.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="accommodation--info__rate">
+            <div className="accommodation--info__author">
+              <div className="author">
+                <h3>{foundAccommodation.host.name}</h3>
+                <img
+                  src={foundAccommodation.host.picture}
+                  alt={foundAccommodation.host.name}
+                />
+              </div>
               <Rate rate={foundAccommodation.rating} />
             </div>
           </div>
@@ -75,7 +71,7 @@ const Accommodation = () => {
     fetchData()
   }, [])
 
-    if (!foundAccommodation) return <Error404 />
+  if (!foundAccommodation) return <Error404 />
 
   return (
     <Fragment>
