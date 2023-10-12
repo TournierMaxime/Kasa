@@ -501,6 +501,14 @@ main {
         justify-content: space-between;
         width: -webkit-fill-available;
       }
+      &__title {
+        ul {
+          flex-wrap: wrap;
+          li {
+            margin: 0 1em 1em 0;
+          }
+        }
+      }
     }
     &--elements {
       width: 47%;
